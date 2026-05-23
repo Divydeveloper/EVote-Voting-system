@@ -1,0 +1,14 @@
+{
+  "name": "evote-india",
+  "version": "1.0.0",
+  "description": "E-Vote India — Full Stack Online Voting System",
+  "scripts": {
+    "install:all": "cd backend && npm install && cd ../frontend && npm install",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm start",
+    "seed": "cd backend && npm run seed",
+    "build": "cd frontend && npm run build"
+  },
+  "keywords": ["voting", "election", "react", "nodejs", "mongodb"],
+  "license": "MIT"
+}

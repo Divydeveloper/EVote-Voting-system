@@ -1,0 +1,114 @@
+/* src/pages/admin/Admin.css */
+
+/* ── Alert Log Item ── */
+.alert-log-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 12px; background: var(--bg);
+  border-radius: var(--radius); border: 1px solid var(--border);
+  transition: var(--transition);
+}
+.alert-log-item:hover { border-color: var(--border-focus); }
+
+/* ── Elections Table Actions ── */
+.table-actions { display: flex; align-items: center; gap: 6px; }
+
+/* ── Form Grid ── */
+.form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0 16px; }
+.form-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0 16px; }
+
+/* ── Candidate Form Panel ── */
+.candidate-form-panel {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 24px;
+  margin-bottom: 20px;
+}
+
+/* ── Election Status Pills ── */
+.status-pill {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 600;
+}
+.status-draft     { background: var(--bg); color: var(--text-muted); }
+.status-upcoming  { background: #fef3c7; color: #92400e; }
+.status-active    { background: #dcfce7; color: #166534; }
+.status-ended     { background: #f1f5f9; color: #475569; }
+.status-results_declared { background: #dbeafe; color: #1e40af; }
+
+[data-theme="dark"] .status-upcoming  { background: rgba(217,119,6,0.15); color: #fbbf24; }
+[data-theme="dark"] .status-active    { background: rgba(22,163,74,0.15); color: #4ade80; }
+[data-theme="dark"] .status-ended     { background: rgba(71,85,105,0.15); color: var(--text-muted); }
+[data-theme="dark"] .status-results_declared { background: rgba(29,78,216,0.15); color: #60a5fa; }
+
+/* ── Voter Row ── */
+.voter-row-avatar {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--primary); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 0.8125rem; flex-shrink: 0;
+}
+
+/* ── Filters Bar ── */
+.filters-bar {
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.filters-bar .form-control { max-width: 200px; }
+
+/* ── Pagination ── */
+.pagination {
+  display: flex; align-items: center; justify-content: center;
+  gap: 6px; margin-top: 20px;
+}
+.page-btn {
+  width: 34px; height: 34px; border-radius: var(--radius);
+  border: 1px solid var(--border); background: var(--bg-card);
+  color: var(--text); font-size: 0.875rem; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: var(--transition);
+}
+.page-btn:hover { border-color: var(--primary); color: var(--primary); }
+.page-btn.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+.page-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* ── Analytics ── */
+.analytics-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+/* ── Audit Log Entry ── */
+.audit-entry {
+  display: flex; gap: 14px; padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+}
+.audit-entry:last-child { border-bottom: none; }
+.audit-dot {
+  width: 10px; height: 10px; border-radius: 50%;
+  flex-shrink: 0; margin-top: 5px;
+}
+.audit-action {
+  font-size: 0.875rem; font-weight: 500; color: var(--text); margin-bottom: 2px;
+}
+.audit-meta { font-size: 0.75rem; color: var(--text-muted); }
+
+/* ── Results Declaration ── */
+.winner-card {
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  border: 2px solid #f59e0b; border-radius: var(--radius-lg);
+  padding: 24px; text-align: center; position: relative; overflow: hidden;
+}
+[data-theme="dark"] .winner-card {
+  background: linear-gradient(135deg, rgba(245,158,11,0.15), rgba(245,158,11,0.08));
+  border-color: rgba(245,158,11,0.4);
+}
+.winner-crown-big { font-size: 48px; margin-bottom: 8px; }
+.winner-name { font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700; color: var(--text); }
+.winner-party { color: var(--text-secondary); font-size: 0.9rem; margin-top: 4px; }
+.winner-votes { font-size: 1.75rem; font-weight: 800; color: #92400e; margin-top: 12px; }
+
+[data-theme="dark"] .winner-votes { color: #fbbf24; }
+
+@media (max-width: 768px) {
+  .form-grid-2, .form-grid-3 { grid-template-columns: 1fr; }
+  .filters-bar .form-control { max-width: 100%; }
+}

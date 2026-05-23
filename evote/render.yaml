@@ -1,0 +1,42 @@
+# render.yaml — Render.com deployment configuration
+# Place this in the root of your repository
+
+services:
+  # ── Backend API ──────────────────────────────────
+  - type: web
+    name: evote-backend
+    env: node
+    region: singapore   # closest to India
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: node server.js
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+      - key: MONGO_URI
+        sync: false       # Set manually in Render dashboard
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_REFRESH_SECRET
+        generateValue: true
+      - key: JWT_EXPIRE
+        value: 7d
+      - key: JWT_REFRESH_EXPIRE
+        value: 30d
+      - key: FRONTEND_URL
+        sync: false       # Set to your Vercel URL
+      - key: EMAIL_HOST
+        value: smtp.gmail.com
+      - key: EMAIL_PORT
+        value: 587
+      - key: EMAIL_USER
+        sync: false
+      - key: EMAIL_PASS
+        sync: false
+      - key: OTP_EXPIRY
+        value: 10
+      - key: RATE_LIMIT_MAX
+        value: 100
