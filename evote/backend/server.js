@@ -25,7 +25,7 @@ app.use(helmet()); // Sets security HTTP headers
 
 // ─── CORS ─────────────────────────────────────────────
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'http://localhost:3000',
+  origin:"https://e-vote-voting-system-git-main-divyanshs-projects-b81ac839.vercel.app",
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
   allowedHeaders: ['Content-Type', 'Authorization'],
