@@ -5,7 +5,7 @@ import axios from 'axios';
 import toast from 'react-hot-toast';
 
 const API = axios.create({
-  baseURL: process.env.REACT_APP_API_URL || 'https://evote-backend-83mn.onrender.com',
+  baseURL: process.env.REACT_APP_API_URL || 'https://evote-backend-83mn.onrender.com/api',
   headers: { 'Content-Type': 'application/json' },
   timeout: 15000,
 });
