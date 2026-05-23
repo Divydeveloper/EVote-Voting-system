@@ -110,19 +110,6 @@ export default function Login() {
               New voter? <Link to="/register">Register here</Link>
             </p>
           )}
-
-          {/* Demo credentials */}
-          <div className="demo-creds">
-            <div className="demo-title">Demo Credentials</div>
-            <div className="demo-row">
-              <span>Voter:</span>
-              <code>rahul@example.com / Voter@123</code>
-            </div>
-            <div className="demo-row">
-              <span>Admin:</span>
-              <code>admin@evote.gov.in / Admin@123</code>
-            </div>
-          </div>
         </div>
       </div>
     </div>
