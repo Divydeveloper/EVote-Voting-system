@@ -29,6 +29,7 @@ app.use(cors({
     "https://e-vote-voting-system.vercel.app",
     "https://e-vote-voting-system-git-main-divyanshs-projects-b81ac839.vercel.app"
   ],
+  credentials:true;
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 }));
