@@ -27,11 +27,17 @@ app.use(helmet()); // Sets security HTTP headers
 
 // ─── CORS ─────────────────────────────────────────────
 app.use(cors({
-  origin: [
-    "https://e-vote-voting-system.vercel.app",
-    "https://e-vote-voting-system-git-main-divyanshs-projects-b81ac839.vercel.app"
-  ],
-  credentials:true,
+  origin: function (origin, callback) {
+    if (
+      !origin ||
+      origin.includes("vercel.app")
+    ) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 }));
